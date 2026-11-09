@@ -25,47 +25,33 @@ import {
 } from 'lucide-react';
 
 export default function App() {
-  // Initial magnet setup: A classic bar magnet and a horseshoe magnet ready to experiment
+  // Initial magnet setup: A single bar magnet, centered, clean starting canvas
   const [sources, setSources] = useState<MagneticSource[]>([
     {
       id: 'bar_init',
       type: 'bar',
-      x: 360,
+      x: 500,
       y: 340,
       rotation: 0,
       strength: 1.2,
       flipped: false,
-      width: 150,
-      height: 42,
+      width: 160,
+      height: 44,
       label: 'Magnete a Barra',
-    },
-    {
-      id: 'hs_init',
-      type: 'horseshoe',
-      x: 680,
-      y: 340,
-      rotation: Math.PI / 2, // opening facing left towards the bar
-      strength: 1.3,
-      flipped: false,
-      width: 140,
-      height: 150,
-      gap: 52,
-      armThickness: 28,
-      label: 'Ferro di Cavallo',
     },
   ]);
 
   const [selectedSourceId, setSelectedSourceId] = useState<string | null>(null);
-  const [activePresetId, setActivePresetId] = useState<string | null>(null);
+  const [activePresetId, setActivePresetId] = useState<string | null>('single_bar');
 
-  // Visual settings state
+  // Visual settings state: field lines and needle grid disabled by default
   const [visualSettings, setVisualSettings] = useState<VisualSettings>({
-    showFieldLines: true,
+    showFieldLines: false,
     fieldLineDensity: 110,
     fieldLineStepSize: 5,
     maxLineSteps: 280,
     animatedFlow: true,
-    vectorMode: 'needles',
+    vectorMode: 'none',
     vectorGridSpacing: 38,
     colorByMagnitude: true,
     showHeatmap: false,
