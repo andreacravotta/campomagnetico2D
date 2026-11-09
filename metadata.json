@@ -1,0 +1,8 @@
+{
+  "name": "Visualizzatore Campo Magnetico 2D",
+  "description": "Simulatore interattivo 2D di linee di campo magnetico e vettori con magneti a barra, ferro di cavallo e correnti.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
